@@ -2,7 +2,6 @@ package com.ecoreno.service;
 
 import java.util.List;
 
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.ecoreno.model.client.Client;
@@ -18,6 +17,6 @@ public class ClientService {
     }
 
     public List<Client> findAllClients() {
-        return repository.findAll(Sort.by("name"));
+        return repository.findAll();
     }
 }
