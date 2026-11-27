@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Connexion</title>
 </head>
+
 <body>
-    <h1>Connexion</h1>
-    <div th:if="${param.error}">
-        Email ou mot de passe incorrect.
-    </div>
-    <form method="post" th:action="@{/login}">
-        <div>
-            <label for="email">Email :</label>
-            <input type="email" name="email" id="email" required />
+    <main>
+        <h1>Connexion</h1>
+        <div th:if="${param.error}" role="alert">
+            Email ou mot de passe incorrect.
         </div>
-        <div>
-            <label for="password">Mot de passe :</label>
-            <input type="password" name="password" id="password" required />
-        </div>
-        <button type="submit">Se connecter</button>
-    </form>
+        <form method="post" th:action="@{/login}">
+            <div>
+                <label for="email">Email :</label>
+                <input type="email" name="email" id="email" required autocomplete="username" />
+            </div>
+            <div>
+                <label for="password">Mot de passe :</label>
+                <input type="password" name="password" id="password" required autocomplete="current-password" />
+            </div>
+            <button type="submit">Se connecter</button>
+        </form>
+    </main>
 </body>
+
 </html>
